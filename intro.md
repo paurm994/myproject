@@ -1,0 +1,3 @@
+# Introducción breve a Git
+
+Git es un sistema de control de versiones ampliamente utilizado en el desarrollo de software. Permite a los equipos de programadores gestionar cambios en el código fuente de manera eficiente y colaborativa. Al utilizar Git, los desarrolladores pueden realizar un seguimiento preciso de las modificaciones realizadas en los archivos a lo largo del tiempo, trabajar en diferentes características de forma simultánea mediante ramas y fusionar fácilmente los cambios. Con su enfoque distribuido, Git facilita el desarrollo independiente en entornos locales y la integración fluida de código entre múltiples colaboradores. Esencial para proyectos de cualquier tamaño, Git mejora la productividad y la organización del desarrollo de software.
