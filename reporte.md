@@ -1,4 +1,4 @@
-# Texto introducción a GIT
+# Texto introducción a GIT IEEE
 
 Git es un sistema de control de versiones ampliamente utilizado en el desarrollo de software para gestionar cambios en el código fuente de manera eficiente y colaborativa. Permite a los desarrolladores rastrear los cambios realizados en los archivos a lo largo del tiempo, facilitando la colaboración en proyectos de programación.
 
