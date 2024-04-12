@@ -7,11 +7,34 @@
     background-color: darkolivegreen;
 }
 
+.img-articulo1 {
+    background-color: darkolivegreen;
+}
+
+/* El unico que prevalece es este de abajo, el fondo-total-articulo. Los demás
+solo añaden estilo a cosas concretas, como el titulo, el parrafo, o la imagen.
+Este de aqui lo engloba todo.  */
+
+.fondo-total-articulo1 {
+    background-color: darkolivegreen;
+}
+
 .header3-articulo2 {
     background-color: darkkhaki;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .p-articulo2 {
-    background-color: darkolivegreen;
+    background-color: darkkhaki;
+}
+
+.img-articulo2 {
+    background-color: darkkhaki;
+}
+
+/* El unico que prevalece es este de abajo, el fondo-total-articulo. Los demás
+solo añaden estilo a cosas concretas, como el titulo, el parrafo, o la imagen.
+Este de aqui lo engloba todo.  */
+.fondo-total-articulo2 {
+    background-color: darkkhaki;
 }
