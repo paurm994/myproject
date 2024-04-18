@@ -40,3 +40,8 @@ section::after {
     display: table;
     clear: both;
 }
+
+article p, article img {
+    display: inline-block;
+    width: 49%;
+}
