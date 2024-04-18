@@ -34,3 +34,9 @@ article {
     height: 750px;
     background-color: white;
 }
+
+section::after {
+    content: "";
+    display: table;
+    clear: both;
+}
