@@ -38,3 +38,14 @@ Este de aqui lo engloba todo.  */
 .fondo-total-articulo2 {
     background-color: darkkhaki;
 }
+a:hover {
+    color: #007bff;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+  
+  a:active {
+    color: red;
+    background-color: #FAFF80;
+    text-decoration: underline;
+  }
