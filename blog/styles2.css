@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+  }
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    background-color: gray;
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+    color: white;
+}
+
+nav {
+    float: left;
+    width: 20%;
+    height: 2500px;
+    background-color: darkgrey;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 10px
+}
+
+article {
+    float: left;
+}
