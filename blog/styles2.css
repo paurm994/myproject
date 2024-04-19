@@ -17,9 +17,10 @@ header {
 nav {
     float: left;
     width: 20%;
-    height: 2500px;
+    height: 100vh;
     background-color: darkgrey;
     padding: 10px;
+    display: fixed;
 }
 
 nav ul {
@@ -44,4 +45,11 @@ section::after {
 article p, article img {
     display: inline-block;
     width: 49%;
+}
+
+footer {
+    background-color: grey;
+    padding: 10px;
+    color: white;
+    text-align: center;
 }
