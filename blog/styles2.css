@@ -12,6 +12,7 @@ header {
     font-size: 20px;
     text-align: center;
     color: white;
+    height: 100px;
 }
 
 nav {
@@ -55,11 +56,11 @@ footer {
 }
 
 nav {
-    position: fixed; /* Para fijar la barra lateral */
-    /*top: 0; /* La barra lateral estará fija en la parte superior */
+    /*position: fixed; /* Para fijar la barra lateral */
+    top: 100px; /* La barra lateral estará fija en la parte superior */
     left: 0; /* La barra lateral estará fija en el lado izquierdo */
     width: 20%; /* Ancho del 20% del viewport */
-    height: calc(100vh - 723px);
+    height: 1200px;
     background-color: darkgrey;
     padding: 10px;
     overflow-y: auto; /* Añadir scroll si el contenido es más largo que la altura */
