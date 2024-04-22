@@ -132,4 +132,10 @@ footer a:hover {
     .menu ul li {
         margin-bottom: 10px;
     }
+    .section article {
+        display: table-column; /* Utilizar CSS Grid */
+        grid-template-columns: repeat(auto-fill, minmax(1000px, 1fr)); /* Crear columnas automáticas */
+        grid-gap: 20px; /* Espacio entre las celdas de la cuadrícula */
+        height: auto;
+    }
 }
