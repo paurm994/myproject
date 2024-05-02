@@ -1,0 +1,10 @@
+h1 {
+    border: 3px solid black;
+    /* margin: 0 0 500px 0; */
+    width: 10%;
+  }
+  
+  h2 {
+    border: 3px solid black;
+    margin: 20px 0 0 0;
+  }
