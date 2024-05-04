@@ -1,0 +1,36 @@
+.cabecera {
+    width: 100%;
+    height: 25vh;
+    background-color: plum;
+    border: 2px solid black;
+    bottom: 20px;
+}
+
+.cabecera p {
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+    vertical-align: center;
+    font-family: monospace;
+    font-size: 30px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 10px;
+}
+
+nav ul li {
+    margin-right: 20px;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 5px;
+    box-sizing: border-box;
+    background-color: darkcyan;
+}
+
+nav ul li a {
+    color: beige;
+    text-decoration: none;
+}
