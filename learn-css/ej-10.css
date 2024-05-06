@@ -1,0 +1,32 @@
+/* Estilos para el contenedor de testimonios */
+.testimonios-container {
+    display: flex; /* Utilizar flexbox para alinear los testimonios */
+    overflow-x: auto; /* Permitir el desplazamiento horizontal */
+    white-space: nowrap; /* Evitar que los testimonios se envuelvan a la siguiente línea */
+    padding: 20px; /* Espaciado interior */
+  }
+  
+  /* Estilos para cada testimonio */
+  .testimonio {
+    flex: 0 0; /* No expandir ni contraer los testimonios */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 300px; /* Ancho fijo de cada testimonio */
+    height: 25vh;
+    margin-right: 20px; /* Espacio entre testimonios */
+    padding: 10px; /* Espaciado interior */
+    border: 1px solid #ccc; /* Borde para distinguir los testimonios */
+    border-radius: 5px; /* Borde redondeado */
+  }
+  
+  .testimonio p {
+    margin-bottom: auto; /* Espacio entre el texto del testimonio y el nombre del usuario */
+    overflow-y: auto;
+
+  }
+  
+  .testimonio span {
+    font-style: italic; /* Texto en cursiva para el nombre del usuario */
+  }
+  
