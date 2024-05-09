@@ -1,56 +1,87 @@
-.galeria {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
-  }
-  
-  .foto {
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .foto img {
-    width: 100%;
-    height: auto;
-    transition: transform 0.3s ease;
-  }
-  
-  .foto:hover img {
-    transform: scale(1.1);
-  }
-  
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  
-  .foto:hover .overlay {
-    opacity: 1;
-  }
-  .cabecera{
+.cabecera {
     width: 100%;
     height: 25vh;
     background-color: plum;
     border: 2px solid black;
     bottom: 20px;
-  }
-  
-  .cabecera p {
+}
+
+.cabecera p {
     box-sizing: border-box;
     padding: 10px;
     text-align: center;
     vertical-align: center;
     font-family: monospace;
     font-size: 30px;
-  }
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: darkcyan;
+}
+
+.menu-icon {
+    cursor: pointer;
+    font-size: 30px;
+    color: beige;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin-right: 20px;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 5px;
+    box-sizing: border-box;
+    background-color: darkcyan;
+}
+
+nav ul li a {
+    color: beige;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+
+    nav ul li {
+        margin-right: 0;
+    }
+
+    .menu-icon::before {
+        content: "\2630"; /* Unicode character for the hamburger icon */
+    }
+
+    #menu-toggle:checked + .menu-icon::before {
+        content: "\2715"; /* Unicode character for the close icon */
+        opacity: 0;
+    }
+
+    #menu-toggle:checked ~ ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: darkcyan;
+        opacity: 0;
+    }
+
+    #menu-toggle:checked ~ ul li {
+        margin-right: 0;
+        border: none;
+        padding: 10px;
+        opacity: 0;
+    }
+}
