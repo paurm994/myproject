@@ -17,10 +17,10 @@ valor4 = 3.14 * r **2;
 
 document.write("valor4 = " + valor4 + " ");
 
-let valor5 = 10 ** 3
+let valor5 = 10 ** 3;
 document.write("valor5 = " + valor5 + " ");
 
-let valor6 = 10 ** -3
+let valor6 = 10 ** -3;
 document.write("valor6 = " + valor6 + " ");
 
 // Poner ** delante de un número significa que lo elevas a la potencia.
