@@ -19,7 +19,7 @@ document.write("<p> Empieza por H? -> " + (frase.startsWith("H")) + "</p>");
 document.write("<p> Contiene algún espacio? -> " + (frase.includes(" ")) + "</p>");
 
 // No es null o undefined
-document.write("<p> No es null o undefined -> " + (frase == null || frase == undefined) + "</p>");
+document.write("<p> No es null o undefined -> " + !(frase == null || frase == undefined) + "</p>");
 
 // Tiene más de 5 carácteres?
 document.write("<p> Tiene más de 5 caracteres? -> " + (frase.length > 5) + "</p>");
