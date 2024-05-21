@@ -1,9 +1,9 @@
 // Concatena:
 // Dos números, la suma y el resultado
-let num1 = 13;
-let num2 = 14;
-let suma = num1 + num2;
-document.write("<p>El resultado de sumar " + num1 + " y " + num2 + " es: " + suma + "</p>");
+let num11 = 13;
+let num21 = 14;
+let suma = num11 + num21;
+document.write("<p>El resultado de sumar " + num11 + " y " + num21 + " es: " + suma + "</p>");
 
 
 // Tres números, el promedio y el resultado
