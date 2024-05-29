@@ -1,0 +1,8 @@
+body {
+    font-family: monospace;
+    text-align: center;
+}
+
+#board {
+    background-color: black;
+}
