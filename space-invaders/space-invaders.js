@@ -38,7 +38,7 @@ let ship = {
 }
 
 
-window.onload = function() {
+window.onload = function () {
     board = document.getElementById("board");
     board.width = boardWidth;
     board.height = boardHeight;
@@ -51,7 +51,7 @@ window.onload = function() {
     // Cargamos imagen de la nave
     shipImg = new Image();
     shipImg.src = "ship.png";
-    shipImg.onload = function() {
+    shipImg.onload = function () {
         context.drawImage(shipImg, ship.x, ship.y, ship.width, ship.height);
     }
 
@@ -93,11 +93,21 @@ function update() {
         bullet.y += bulletVelocityY;
         context.fillStyle = "white";
         context.fillRect(bullet.x, bullet.y, bullet.width, bullet.height);
+        // Colision de las balas con los aliens
+        for (let j = 0; j < alienArray.length; j++) {
+            let alien = alienArray[j];
+            if (!bullet.used && alien.alive && detectCollision(bullet, alien)) {
+                bullet.used = true;
+                alien.alive = false;
+                alienCount--;
+            }
+        }
     }
 
     while (bulletArray.length > 0 && (bulletArray[0].used || bulletArray[0].y < 0)) {
         bulletArray.shift();  // Esta linea borra el primer elemento del array cuando ha desaparecido de la pantalla
     }
+
 
 }
 
@@ -141,9 +151,11 @@ function shoot(e) {
     }
 }
 
+// Verifica si el objeto a (bala) ocupa el mismo espacio que el objeto b (alien)
 function detectCollision(a, b) {
     return a.x < b.x + b.width && // Verifica que la esquina superior izquierda de a no alcanza la equina superior derecha de b
         a.x + a.width > b.x && // Verifica que la esquina superior derecha de a ha sobrepasado la esquina superior izquierda de b (es decir, que a se encuentra dentro de los limites del espacio que ocupa b en el eje X)
         a.y < b.y + b.height && // Verifica que la esquina inferior izquierda de a no alcanza la esquina superior izquierda de b
         a.y + a.height > b.y; // Verifica que la esquina superior izquierda de a ha sobrepasado el límite inferior de b (es decir, que a se encuentra dentro de los límites del espacio que ocupa b en el eje Y)
 }
+
