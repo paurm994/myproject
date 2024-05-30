@@ -95,6 +95,10 @@ function update() {
         context.fillRect(bullet.x, bullet.y, bullet.width, bullet.height);
     }
 
+    while (bulletArray.length > 0 && (bulletArray[0].used || bulletArray[0].y < 0)) {
+        bulletArray.shift();  // Esta linea borra el primer elemento del array cuando ha desaparecido de la pantalla
+    }
+
 }
 
 // Utilizamos funciones que esperan un evento del usuario, en este caso las flechas para mover la nave.
@@ -135,4 +139,11 @@ function shoot(e) {
         }
         bulletArray.push(bullet);
     }
+}
+
+function detectCollision(a, b) {
+    return a.x < b.x + b.width && // Verifica que la esquina superior izquierda de a no alcanza la equina superior derecha de b
+        a.x + a.width > b.x && // Verifica que la esquina superior derecha de a ha sobrepasado la esquina superior izquierda de b (es decir, que a se encuentra dentro de los limites del espacio que ocupa b en el eje X)
+        a.y < b.y + b.height && // Verifica que la esquina inferior izquierda de a no alcanza la esquina superior izquierda de b
+        a.y + a.height > b.y; // Verifica que la esquina superior izquierda de a ha sobrepasado el límite inferior de b (es decir, que a se encuentra dentro de los límites del espacio que ocupa b en el eje Y)
 }
