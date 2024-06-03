@@ -140,7 +140,7 @@ function update() {
     if (alienCount === 0) {
         context.fillStyle = "green";
         context.font = "40px monospace";
-        context.fillText("Has ganado!", boardWidth / 2 - 100, boardHeight / 2);
+        context.fillText("You win!", boardWidth / 2 - 100, boardHeight / 2);
         return; // Detiene el juego
     }
 
