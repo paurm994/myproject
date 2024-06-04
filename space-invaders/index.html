@@ -8,9 +8,26 @@
 </head>
 <body>
     <h1>Space Invaders</h1>
+
+    <div class="button-container">
+        <button id="playMusic">Reproducir música</button>
+    </div>
+
+    <audio id="backgroundMusic" src="space-song.mp3"></audio>
+
     <canvas id="board"></canvas>
 
     <script src="space-invaders.js"></script>
-    
+    <script>
+        document.getElementById("playMusic").addEventListener("click", function() {
+            let audio = document.getElementById("backgroundMusic");
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        })
+
+    </script>
 </body>
 </html>

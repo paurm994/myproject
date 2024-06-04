@@ -131,7 +131,7 @@ function update() {
     // Verificamos si algún alien llega abajo.
     for (let i = 0; i < alienArray.length; i++) {
         let alien = alienArray[i];
-        if (alien.alive && alien.y + alien.height >= board.height) {
+        if (alien.alive && alien.y + alien.height >= board.height - tileSize * 2) {
             gameOver = true;
             break;
         }
