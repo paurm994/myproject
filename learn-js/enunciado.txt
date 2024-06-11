@@ -9,3 +9,141 @@ Pregunta 3: ¿Cómo funcionan las promesas en JavaScript? Explica con un ejemplo
 Pregunta 4: ¿Qué es la diferencia entre == y === en JavaScript? Proporciona un ejemplo donde == devuelva true y === devuelva false.
 
 Pregunta 5: ¿Qué es el hoisting en JavaScript? Explica cómo afecta a las declaraciones de variables y funciones con un ejemplo.
+
+
+### Pregunta 1: ¿Cuál es la diferencia entre `var`, `let`, y `const` en JavaScript? Proporciona un ejemplo de cada uno.
+
+Respuesta:
+
+En JavaScript, `var`, `let`, y `const` son palabras clave usadas para declarar variables, pero tienen diferencias importantes en cuanto a su alcance y mutabilidad. 
+
+- `var` tiene un alcance de función, lo que significa que está disponible en todo el cuerpo de la función donde se declara. También permite redeclaración y reasignación.
+- `let` tiene un alcance de bloque, lo que significa que solo está disponible dentro del bloque donde se declara. No permite redeclaración dentro del mismo bloque, pero sí permite reasignación.
+- `const` también tiene un alcance de bloque y se usa para declarar variables constantes que no pueden ser reasignadas una vez definidas. Sin embargo, si el valor es un objeto o un array, se pueden modificar sus propiedades internas.
+
+Ejemplos:
+
+```javascript
+// var ejemplo
+function ejemploVar() {
+  var x = 1;
+  if (true) {
+    var x = 2; // misma variable
+    console.log(x); // 2
+  }
+  console.log(x); // 2
+}
+ejemploVar();
+
+// let ejemplo
+function ejemploLet() {
+  let y = 1;
+  if (true) {
+    let y = 2; // diferente variable
+    console.log(y); // 2
+  }
+  console.log(y); // 1
+}
+ejemploLet();
+
+// const ejemplo
+function ejemploConst() {
+  const z = 1;
+  // z = 2; // Esto dará error porque z es constante
+  const obj = { a: 1 };
+  obj.a = 2; // Esto está permitido
+  console.log(obj.a); // 2
+}
+ejemploConst();
+```
+
+### Pregunta 2: ¿Qué es el `event bubbling` en el DOM y cómo se puede detener? Proporciona un ejemplo.
+
+Respuesta:
+
+El `event bubbling` es un mecanismo en el DOM donde un evento que se dispara en un elemento primero se propaga hacia arriba desde ese elemento hasta el nodo raíz. Esto significa que los manejadores de eventos de los ancestros del elemento también se ejecutan, en orden ascendente. Para detener el `event bubbling`, se puede usar el método `stopPropagation()` en el evento.
+
+Ejemplo:
+
+```html
+<!DOCTYPE html>
+<html>
+<body>
+  <div id="parent">
+    <button id="child">Click me</button>
+  </div>
+
+  <script>
+    document.getElementById('parent').addEventListener('click', function() {
+      alert('Parent clicked');
+    });
+
+    document.getElementById('child').addEventListener('click', function(event) {
+      alert('Child clicked');
+      event.stopPropagation(); // Detiene el bubbling
+    });
+  </script>
+</body>
+</html>
+```
+
+### Pregunta 3: ¿Cómo funcionan las promesas en JavaScript? Explica con un ejemplo sencillo de una promesa que se resuelve después de 2 segundos.
+
+Respuesta:
+
+Las promesas en JavaScript son objetos que representan un valor que puede estar disponible ahora, en el futuro o nunca. Una promesa puede estar en uno de tres estados: pendiente (pending), resuelta (fulfilled) o rechazada (rejected). Las promesas permiten manejar operaciones asincrónicas de una manera más limpia que usando callbacks.
+
+Ejemplo:
+
+```javascript
+const miPromesa = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve('Promesa resuelta');
+  }, 2000);
+});
+
+miPromesa.then((mensaje) => {
+  console.log(mensaje); // 'Promesa resuelta' después de 2 segundos
+}).catch((error) => {
+  console.log(error);
+});
+```
+
+### Pregunta 4: ¿Qué es la diferencia entre `==` y `===` en JavaScript? Proporciona un ejemplo donde `==` devuelva `true` y `===` devuelva `false`.
+
+Respuesta:
+
+En JavaScript, `==` es el operador de igualdad que compara dos valores después de convertirlos a un tipo común (coerción de tipos), mientras que `===` es el operador de igualdad estricta que compara tanto el valor como el tipo sin hacer coerción.
+
+Ejemplo:
+
+```javascript
+let a = '5';
+let b = 5;
+
+console.log(a == b); // true, porque '5' se convierte a 5 antes de la comparación
+console.log(a === b); // false, porque '5' es una cadena y 5 es un número
+```
+
+### Pregunta 5: ¿Qué es el `hoisting` en JavaScript? Explica cómo afecta a las declaraciones de variables y funciones con un ejemplo.
+
+Respuesta:
+
+El `hoisting` en JavaScript es un comportamiento por el cual las declaraciones de variables y funciones se mueven al comienzo de su contexto de ejecución durante la fase de compilación. Esto significa que puedes usar variables y funciones antes de declararlas en el código, aunque solo las declaraciones de variables se elevan, no sus inicializaciones.
+
+Ejemplo:
+
+```javascript
+// Ejemplo de hoisting con variables
+console.log(x); // undefined
+var x = 5;
+
+// Ejemplo de hoisting con funciones
+miFuncion(); // 'Hola'
+
+function miFuncion() {
+  console.log('Hola');
+}
+```
+
+En el primer ejemplo, la declaración de `var x` se eleva al principio del contexto, pero no su asignación. En el segundo ejemplo, toda la función `miFuncion` se eleva, permitiendo que se llame antes de su declaración.
