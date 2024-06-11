@@ -1,0 +1,11 @@
+Teoría
+Pregunta 1: ¿Cuál es la diferencia entre var, let, y const en JavaScript? Proporciona un ejemplo de cada uno.
+var es una variable dinamica global, let es de bloque y const es una constante, que no puede ser reasignada.
+
+Pregunta 2: ¿Qué es el event bubbling en el DOM y cómo se puede detener? Proporciona un ejemplo.
+
+Pregunta 3: ¿Cómo funcionan las promesas en JavaScript? Explica con un ejemplo sencillo de una promesa que se resuelve después de 2 segundos.
+
+Pregunta 4: ¿Qué es la diferencia entre == y === en JavaScript? Proporciona un ejemplo donde == devuelva true y === devuelva false.
+
+Pregunta 5: ¿Qué es el hoisting en JavaScript? Explica cómo afecta a las declaraciones de variables y funciones con un ejemplo.
