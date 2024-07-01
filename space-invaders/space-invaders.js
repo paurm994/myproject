@@ -79,6 +79,7 @@ function update() {
         return; // Detiene el juego
     }
 
+    //Verificamos mensaje de You Win!
     if (youWin) {
         context.fillStyle = "green";
         context.font = "40px monospace";
