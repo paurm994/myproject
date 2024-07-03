@@ -6,11 +6,26 @@ import numpy as np
 np.random.seed(42)  # Para reproducibilidad
 num_samples = 1000
 
+# Generar edades aleatorias entre 18 y 70 años
 edades = np.random.randint(18, 70, size=num_samples)
-alturas = np.random.normal(loc=165, scale=10, size=num_samples)
-pesos = np.random.normal(loc=70, scale=15, size=num_samples)
+
+# Generar géneros aleatorios
 generos = np.random.choice(['M', 'F'], size=num_samples)
 
+# Crear listas vacías para alturas y pesos
+alturas = []
+pesos = []
+
+# Asignar alturas y pesos diferentes para hombres y mujeres
+for genero in generos:
+    if genero == 'M':
+        alturas.append(np.random.normal(loc=175, scale=7))
+        pesos.append(np.random.normal(loc=78, scale=10))
+    else:
+        alturas.append(np.random.normal(loc=165, scale=7))
+        pesos.append(np.random.normal(loc=65, scale=8))
+
+# Crear DataFrame con los datos generados
 data = {
     'Edad': edades,
     'Altura': alturas,
