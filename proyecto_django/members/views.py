@@ -13,3 +13,10 @@ def members(request):
 
 def index(request):
     return render(request, "index.html")
+
+def details(request, id):
+    mymember = Member.objects.get(id=id)
+    context = {
+        'mymember': mymember,
+    }
+    return render(request, "details.html", context)
