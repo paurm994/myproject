@@ -1,11 +1,19 @@
+{% extends "master.html" %}
 <!DOCTYPE html>
 <html>
-    <body>
-        <h1>{{ mymember.firstname }} {{ mymember.lastname}}</h1>
+{% block title %}
+Details about {{ mymember.firstname }} {{ mymember.lastname }}
+{% endblock %}
 
-        <p>Phone: {{ mymember.phone }}</p>
-        <p>Miembro desde: {{ mymember.joined_date }}</p>
+<body>
+    {% block content %}
+    <h1>{{ mymember.firstname }} {{ mymember.lastname}}</h1>
 
-        <p>Volver a <a href="/members"> Miembros</a></p>
-    </body>
+    <p>Phone: {{ mymember.phone }}</p>
+    <p>Miembro desde: {{ mymember.joined_date }}</p>
+
+    <p>Volver a <a href="/members"> Miembros</a></p>
+    {% endblock %}
+</body>
+
 </html>
