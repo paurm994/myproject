@@ -17,7 +17,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
+# No tengo claro si estas importaciones van en este archivo, o en el de urls.py
+# dentro de members.
+from django.contrib.auth import views as auth_views
+from members.views import signup_view, CustomLoginView, CustomLogoutView, protected_view
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('members.urls')),
+    # Estas rutas lo mismo, no se si van en este archivo o en el de members
+    path('signup/', signup_view, name='signup'),
+    path('login/', CustomLoginView.as_view(), name='login'),
+    path('logout/', CustomLogoutView.as_view(), name='logout'),
+    path('protected/', protected_view, name='protected'),
 ]

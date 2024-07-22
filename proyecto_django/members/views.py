@@ -2,6 +2,12 @@ from django.shortcuts import render
 # from django.http import HttpResponse
 from .models import Member
 
+from django.contrib.auth import login, authenticate
+from django.contrib.auth.forms import UserCreationForm
+from django.shortcuts import redirect
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.views import LoginView, LogoutView
+
 # Create your views here.
 
 def members(request):
@@ -20,3 +26,24 @@ def details(request, id):
         'mymember': mymember,
     }
     return render(request, "details.html", context)
+
+def signup_view(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('home')
+    else:
+        form = UserCreationForm()
+    return render(request, 'registration/signup.html', {'form': form})
+
+class CustomLoginView(LoginView):
+    template_name = 'registration/login.html'
+
+class CustomLogoutView(LogoutView):
+    template_name = 'registration/logged_out.html'
+
+@login_required
+def protected_view(request):
+    return render(request, 'protected.html')
