@@ -6,5 +6,10 @@
 <body>
     <h2>Página protegida</h2>
     <p>Bienvenido a la página protegida. Si puedes ver esto significa que te has autenticado!</p>
+
+    <form method="post" action="{% url 'logged_out' %}">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+    </form>
 </body>
 </html>

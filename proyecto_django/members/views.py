@@ -27,13 +27,17 @@ def details(request, id):
     }
     return render(request, "details.html", context)
 
+
+def signup_success_view(request):
+    return render(request, 'registration/signup_success.html')
+
 def signup_view(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('home')
+            return redirect('signup_success')
     else:
         form = UserCreationForm()
     return render(request, 'registration/signup.html', {'form': form})
