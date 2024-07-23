@@ -31,6 +31,6 @@ urlpatterns = [
     path('signup_success/', signup_success_view, name='signup_success'),  # URL para la página de éxito
     path('login/', CustomLoginView.as_view(), name='login'),
     path('logout/', CustomLogoutView.as_view(), name='logout'),
-   # path('logged_out/', CustomLogoutView.as_view(template_name='registration/logged_out.html'), name='logged_out'),
+    #path('logged_out/', CustomLogoutView.as_view(template_name='registration/logged_out.html'), name='logged_out'),
     path('protected/', protected_view, name='protected'),
 ]
