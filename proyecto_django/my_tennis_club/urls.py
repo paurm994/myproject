@@ -20,7 +20,7 @@ from django.urls import include, path
 # No tengo claro si estas importaciones van en este archivo, o en el de urls.py
 # dentro de members.
 from django.contrib.auth import views as auth_views
-from members.views import signup_view, CustomLoginView, CustomLogoutView, protected_view, signup_success_view
+from members.views import signup_view, CustomLoginView, protected_view, signup_success_view, logged_out_template, CustomLogoutView
 
 
 urlpatterns = [
@@ -30,7 +30,8 @@ urlpatterns = [
     path('signup/', signup_view, name='signup'),
     path('signup_success/', signup_success_view, name='signup_success'),  # URL para la página de éxito
     path('login/', CustomLoginView.as_view(), name='login'),
-    path('logout/', CustomLogoutView.as_view(), name='logout'),
-    path('logged_out/', CustomLogoutView.as_view(template_name='registration/logged_out.html'), name='logged_out'),
+    path('logout/', auth_views.LogoutView.as_view(next_page='logged_out'), name='logout'),
+    path('logged_out/', logged_out_template, name='logged_out'),
+   # path('logged_out/', logged_out_view, name='logged_out'),
     path('protected/', protected_view, name='protected'),
 ]

@@ -2,7 +2,7 @@ from django.shortcuts import render
 # from django.http import HttpResponse
 from .models import Member
 
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
@@ -47,6 +47,13 @@ class CustomLoginView(LoginView):
 
 class CustomLogoutView(LogoutView):
     template_name = 'registration/logged_out.html'
+
+def logged_out_view(request):
+    logout(request)
+    return redirect('logged_out')
+        
+def logged_out_template(request):
+    return render(request, 'registration/logged_out.html')
 
 @login_required
 def protected_view(request):
