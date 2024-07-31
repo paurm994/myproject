@@ -1,0 +1,40 @@
+<!-- facturas/templates/facturas/lista_facturas.html -->
+{% load custom_filters %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Facturas</title>
+</head>
+<body>
+    <h1>Lista de Facturas</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Cliente</th>
+            <th>Fecha</th>
+            <th>Total</th>
+            <th>Acciones</th>
+        </tr>
+        {% for factura in facturas %}
+        <tr>
+            <td>{{ factura.id }}</td>
+            <td>{{ factura.cliente.nombre }}</td>
+            <td>{{ factura.fecha }}</td>
+            <td>
+                {% with total=0 %}
+                {% for pf in factura.productofactura_set.all %}
+                    {% with total=total|add:pf.producto.precio|multiply:pf.cantidad %}
+                    {% endwith %}
+                {% endfor %}
+                {{ total }}
+                {% endwith %}
+            </td>
+            <td>
+                <a href="{% url 'detalle_factura' factura.id %}">Ver Detalle</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'crear_factura' %}">Crear Nueva Factura</a>
+</body>
+</html>

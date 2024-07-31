@@ -1,0 +1,17 @@
+<!-- facturas/templates/facturas/home.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Página Principal</title>
+</head>
+<body>
+    <h1>Bienvenido a la Gestión de Facturas</h1>
+    <p>Elige una opción:</p>
+    <a href="{% url 'crear_factura' %}">
+        <button>Crear Factura</button>
+    </a>
+    <a href="{% url 'lista_facturas' %}">
+        <button>Listado de Facturas</button>
+    </a>
+</body>
+</html>

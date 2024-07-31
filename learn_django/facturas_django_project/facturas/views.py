@@ -33,3 +33,11 @@ def detalle_factura(request, factura_id):
     productos_factura = ProductoFactura.objects.filter(factura=factura)
     total = sum(pf.producto.precio * pf.cantidad for pf in productos_factura)
     return render(request, 'facturas/detalle_factura.html', {'factura': factura, 'productos_factura': productos_factura, 'total': total})
+
+def lista_facturas(request):
+    facturas = Factura.objects.all()
+    return render(request, 'facturas/lista_facturas.html', {'facturas': facturas})
+
+def home(request):
+    return render(request, 'facturas/home.html')
+
